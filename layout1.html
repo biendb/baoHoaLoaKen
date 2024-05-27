@@ -1,0 +1,523 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      * {
+        padding: 0px;
+        margin: 0px;
+        box-sizing: border-box;
+        font-family: Arial, Helvetica, sans-serif;
+      }
+
+      img {
+        max-width: 100%;
+      }
+
+      .wrapper {
+        width: 1080px;
+        margin: 0px auto;
+      }
+
+      .header {
+        height: 100px;
+      }
+
+      .header-gird {
+        display: flex;
+        /* grid-template-columns: 1fr; */
+        align-items: center;
+        justify-content: space-around;
+      }
+
+      .header-logo iframe {
+        height: 70px;
+      }
+
+      .header-logo {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        padding: 17px 0px 0px 100px;
+      }
+
+      .header-right-gird {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        margin: 0px 20px;
+      }
+
+      .header-right-gird .btn-login {
+        font-weight: bold;
+        border: 1px solid #bb4345;
+        font-size: 18px;
+        background: none;
+        padding: 5px 10px;
+        border-radius: 7px;
+        margin: 0 10px 0 0;
+      }
+
+      .header-right-gird .inp-form {
+        padding: 7px 15px;
+        margin: 0 10px;
+        border-radius: 7px;
+        border: solid 1px #bb4345;
+        margin: 0 0 10px 0;
+      }
+
+      .header-right-gird .inp-form:focus {
+        border: 1px #bb4345;
+      }
+
+      .btn-login button a {
+        color: black;
+        text-decoration: none;
+      }
+
+      nav {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        box-shadow: #575757 0px 0px 5px 0px;
+        margin: 10px 0px 10px 0px;
+      }
+
+      nav li {
+        list-style: none;
+        padding: 10px;
+      }
+
+      nav li a {
+        text-decoration: none;
+        font-weight: bold;
+        color: #575757;
+      }
+
+      .nav-main {
+        color: #bb4345;
+      }
+
+      .noti-login {
+        color: red;
+        font-weight: bold;
+        font-size: 12px;
+        margin: 0px 0 0px 7px;
+      }
+
+      .search-toggle {
+        cursor: pointer;
+      }
+
+      .search-input {
+        display: none;
+      }
+
+      .search-img {
+        height: 20px;
+      }
+
+      .search-toggle:focus .search-input {
+        display: block;
+      }
+
+      .form-login {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+      }
+
+      .form {
+        width: 530px;
+        height: 50px;
+        margin: 31px 0 0 100px;
+      }
+
+      .form-search-nav-btn {
+        display: none;
+      }
+
+      .banner {
+        /* background-image: url(https://lmsutceduvn-my.sharepoint.com/personal/bien231133182_lms_utc_edu_vn/_layouts/15/embed.aspx?UniqueId=d31f642d-2bd1-4ee0-b2a1-983ac66885af); */
+        
+        /* height: 360px; */
+        /* background-size: 100% 100%; */
+        margin: 0px 0px 10px 0px;
+        text-align: center;
+      }
+
+      .btn-banner {
+        text-align: center;
+        margin: 10px 200px;
+      }
+
+      .button-banner {
+        padding: 7px 20px;
+        margin: 0px 10px;
+        background: #bb4345;
+        border-radius: 7px;
+        border: none;
+        color: #fff;
+        font-weight: bold;
+        cursor: pointer;
+      }
+
+      .menu-gird {
+        display: flex;
+        text-align: center;
+        justify-content: space-between;
+        align-items: center;
+        background: #e6e6e6;
+        padding: 10px 50px 10px 50px;
+        margin: 10px 0px 10px 0px;
+      }
+
+      .menu-select-category-btn {
+        background: #e6e6e6;
+        border: 1px solid #bb4345;
+        border-radius: 2px;
+        padding: 2px;
+      }
+
+      .menu-select-category-btn {
+        margin: 0px 5px;
+      }
+
+      #category-drink {
+        padding: 2px;
+        background: #e6e6e6;
+        border-radius: 2px;
+      }
+
+      .menu-form-search-search {
+        border: 1px solid #7e7e7e;
+        background: #e6e6e6;
+        border-radius: 3px;
+        padding: 2px;
+      }
+
+      .card-gird {
+        display: grid;
+        grid-template-columns: 1fr;
+        gap: 20px;
+      }
+
+      .card-thumb iframe {
+        height: 300px;
+      }
+      .countdown-title {
+        color: orangered;
+        font-weight: bold;
+        font-size: 28px;
+        margin: 10px 0 10px 20px;
+      }
+
+      .countdown-time {
+        font-weight: bold;
+        font-size: 18px;
+        margin: 10px 0 10px 20px;
+      }
+
+      .card-thumb {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        margin: 10px 0px;
+      }
+
+      .card-title {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-weight: bold;
+        font-size: 20px;
+        margin: 10px 0px;
+      }
+
+      
+
+      .card-title-eng {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 16px;
+        margin: 10px 0px;
+      }
+    
+
+      
+
+      .content-card-btn {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+      }
+
+      .content-card-btn button {
+        border: 1px solid #bb4345;
+        padding: 5px 7px;
+        border-radius: 5px;
+        background: #fff;
+      }
+
+     
+      .content-card-btn button a {
+        text-decoration: none;
+        color: #bb4345;
+      }
+
+
+      .content-card-btn-del {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+      }
+
+      .content-card-btn-del button {
+        border: 1px solid #bb4345;
+        padding: 5px 7px;
+        border-radius: 5px;
+        background: #fff;
+        margin: 22px 0px 10px 0px;
+      }
+
+      .content-card-btn-del button a {
+        text-decoration: none;
+        color: #bb4345;
+      }
+
+      .card {
+        margin: 10px 0;
+        /* height: 500px; */
+      }
+
+      .card:hover {
+        box-shadow: 0px 0px 5px 0px gray;
+        border-radius: 7px;
+      }
+
+      footer {
+        height: 70px;
+        background: #bb4345;
+        color: #fff;
+        font-weight: bold;
+        font-size: 24px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        margin: 20px 0 0 0;
+      }
+      .noti-login {
+            padding: 20px;
+            background-color: #f0f0f0;
+            border: 1px solid #ccc;
+            text-align: center;
+        }
+        .new-class {
+            padding: 20px;
+            background-color: #ffb0ad;
+            border: 1px solid #bb4345;
+            text-align: center;
+            font-weight: bold;
+            font-size: 18px;
+
+        }
+        .thank{
+            display: flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 16px;
+        margin: 10px 0px;
+        text-align: center;
+        padding: 10px 0 0 0px;
+        }
+        .noti-noti{ 
+             display: flex;
+        align-items: center;
+        justify-content: center;
+        margin: 10px 0px;
+        padding: 10px;
+        }
+        .noti-noti input{
+            font-weight: bold;
+        border: 1px solid #bb4345;
+        font-size: 18px;
+        background: none;
+        padding: 5px 10px;
+        border-radius: 7px;
+        margin: 0 10px 0 0;
+        
+        }
+        p{
+            color: #bb4345;
+            font-weight: bold;
+        }
+    </style>
+  </head>
+
+  <body onload="loadAnh()">
+    <div class="wrapper">
+      <div class="header">
+        <div class="header-gird">
+          <div class="header-gird-left">
+            <div class="header-logo">
+              <a href="#"><iframe src="https://lmsutceduvn-my.sharepoint.com/personal/bien231133182_lms_utc_edu_vn/_layouts/15/embed.aspx?UniqueId=d12d20a0-10b3-4429-b928-07b8cf476400" width="80" height="80" frameborder="0" scrolling="no" allowfullscreen title="4011393_2111120.png"></iframe></a>
+            </div>
+          </div>
+          <div class="header-right-gird">
+            <div class="form">
+              <div class="inp-login">
+                <div id="form-login"></div>
+                <form action="finalLayout.html" method="get" onsubmit="return valForm()">
+                  <input type="text" class="inp-form" name="firstName" id="firsName" placeholder="Tài khoản" />
+                  <input type="text" class="inp-form" name="lastName" id="lastNme" placeholder="Mật khẩu" />
+                  <input type="submit" value="Đăng nhập" name="" id="" class="btn-login" />
+                </form>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <nav>
+        <li><a href="#">TRANG CHỦ</a></li>
+        <li><a href="#">THỂ THAO</a></li>
+        <li><a href="#">VĂN HÓA</a></li>
+        <li><a href="#">ĐỜI SỐNG</a></li>
+        <li><a href="#">KINH DOANH</a></li>
+        <li><a href="#">KHOA HỌC</a></li>
+        <li><a href="#">KHO ẢNH</a></li>
+        <form action="" class="form-search-nav">
+          <input type="text" class="search-input" placeholder="Nhập để tìm kiếm" />
+          <label for="search-toggle" class="search-toggle">
+            <img class="search-img" src="img/search.svg" alt="" />
+          </label>
+          <button type="submit" class="form-search-nav-btn"></button>
+        </form>
+      </nav>
+      <div class="banner" id="banner">
+        <div class="main-banner">
+          Lời mở đầu <br />
+          <p>BÁO HOA LOA KÈN LÀ GÌ:</p>
+          đây là trang báo uy tín cập nhật tin tức nhanh chóng chỉ trong vòng một nốt nhạc. <br> Chắc hẳn quý khán giả đã nghe qua về
+          <p>báo lá cải, báo cha và báo mẹ</p>
+          nhưng hôm nay quý nhà đài xin phép được công bố một loại báo hoàn toàn mới mang tên
+          <p>BÁO HOA LOA KÈN</p>
+        </div>
+      </div>
+        <div class="menu-gird">
+          <div class="menu-select-category">
+            <form action="" class="category">
+              <label for="category-drink">Thể loại</label>
+              <select name="category1" id="category-drink">
+                <option value="milk-tea">Văn Hóa</option>
+                <option value="lemon-tea">Thể Thao</option>
+              </select>
+              <button class="menu-select-category-btn">Lọc</button>
+            </form>
+          </div>
+          <div class="menu-select-price">
+            <form action="" class="price">
+              <button class="menu-select-category-btn">Sắp xếp</button>
+              <select name="" id="category-drink">
+                <option value="acending">Mới nhất</option>
+                <option value="decrease">Cũ nhất</option>
+              </select>
+            </form>
+          </div>
+          <form action="" class="menu-form-search">
+            <button type="submit" class="menu-select-category-btn">Tìm kiếm</button>
+            <input type="text" required class="menu-form-search-search" />
+          </form>
+        </div>
+      </div>
+
+      <div class="content">
+        <div class="card-gird">
+          <div class="card">
+            <div class="card-thumb"><iframe src="https://lmsutceduvn-my.sharepoint.com/personal/bien231133182_lms_utc_edu_vn/_layouts/15/embed.aspx?UniqueId=1bad9b03-ec8e-4453-807e-172f7a5b1e98" width="1080" height="1080" frameborder="0" scrolling="no" allowfullscreen title="20240527_030024488_iOS.jpg"></iframe></div>
+            <div class="card-title">🔥TIN HÓT TRONG NGÀY: sườn xào chua ngọt đã CMSN Trạm Phát Sóng 🔥</div>
+            <div class="card-title-eng">Rất nhanh thôi chỉ sau 16 tiếng đồng hộ phóng viên của nhà đài đã bắt trọn khoảnh khắc <br> SƯỜN XÀO CHUA NGỌT chúc mừng sinh nhật trạm phát sóng. Nhưng sáng sớm nay nhà đài đã dậy kiểm tra nhưng không thấy vết tích gì nữa. <br> Rất có thể là giận dỗi nhau hoặc đã hết ngày sinh nhật.</div>
+            <div class="noti-loginn" id="noti-loginn">
+                <div class="thank">Cảm ơn quý khán giả đã đọc đến đây rất mong quý khán giả giảm ngày dỗi từ 10000 ngày xuống còn 0 ngày. <br> Quý khán giả có đồng ý không?</div>
+                <div class="noti-noti">
+                    <input type="button" name="yes" id="yes" value="Có">
+                    <input type="button" name="no" id="no" value="Không">
+                </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <footer>BÁO HOA LOA KÈN</footer>
+    </div>
+    <script>
+      // live show
+      
+      function showMessage() {
+            var notiLoginDiv = document.getElementById('noti-loginn');
+            notiLoginDiv.className = 'new-class';
+            notiLoginDiv.innerHTML = 'Xia xỉa quý khán giả đã bỏ qua cho quý nhà báo. <br> Quý khán giả <a href="https://www.youtube.com">Bấm vào đây </a> để làm trò với quý nhà báo. <br> Nếu quý khán giả không thích lựa chọn vừa rồi quý khán giả có thể load trang chọn lại!';
+        }
+
+        document.getElementById('yes').onclick = showMessage;
+        document.getElementById('no').onclick = showMessage;
+
+      // form
+
+      function valForm() {
+        var noti = document.getElementById("noti-login");
+        var p = event.target.children;
+        if (p.firstName.value == "") {
+          noti.innerHTML = "Vui lòng nhập tài khoản!";
+          return false;
+        }
+        if (p.lastName.value == "") {
+          noti.innerHTML = "Vui lòng nhập mật khẩu!";
+          return false;
+        }
+        return true;
+      }
+
+      // function message(m) {
+      //     document.getElementById("form-login").innerHTML = m;
+      // }
+
+      // đếm ngược
+      var countDownDate = new Date("April 9, 2024 18:00:00").getTime();
+
+      // cap nhat dem nguoc moi giay
+      var x = setInterval(function () {
+        // lay ngay gio hien tai
+        var now = new Date().getTime();
+
+        // tinh khoang cach tu gio den ngay dem nguoc
+        var distance = countDownDate - now;
+
+        // tinh ngay gio phut giay con lai
+        var days = Math.floor(distance / (1000 * 60 * 60 * 24));
+        var hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+        var minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+        var seconds = Math.floor((distance % (1000 * 60)) / 1000);
+
+        // hien thi kq trong phan tu id="countdown"
+        document.getElementById("countdown").innerHTML = days + "d " + hours + "h " + minutes + "m " + seconds + "s ";
+
+        // ket thuc dem nguoc hien
+        if (distance < 0) {
+          clearInterval(x);
+          document.getElementById("countdown").innerHTML = "ĐÃ KẾT THÚC SALE";
+        }
+      }, 1000);
+
+      // OnMouse
+      function onMouseOverEvent() {
+        document.getElementById("img_logo").src = "img/logo1.png";
+      }
+
+      function onMouseOutEvent() {
+        document.getElementById("img_logo").src = "img/logo.png";
+      }
+    </script>
+  </body>
+</html>
